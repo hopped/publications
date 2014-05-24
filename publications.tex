@@ -1,0 +1,66 @@
+%!TEX program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt,a4paper]{article}
+
+%-------------------------------------------------------------------------------
+% PACKAGES
+%-------------------------------------------------------------------------------
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{etoolbox}
+
+
+
+%-------------------------------------------------------------------------------
+% PDF SETUP
+%-------------------------------------------------------------------------------
+
+\usepackage[unicode,pdfencoding=auto,bookmarks, colorlinks, breaklinks,
+    pdfinfo={
+        Title={Dennis Hoppe - Publications},
+        Author={Dennis Hoppe},
+        Producer={http://dennis-hoppe.com}
+    }
+]{hyperref}
+\hypersetup{
+    linkcolor=blue,%
+    citecolor=blue,%
+    filecolor=black,%
+    urlcolor=MidnightBlue%
+}
+
+
+
+%-------------------------------------------------------------------------------
+% DOCUMENT START
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+
+\section*{Publications of Dennis Hoppe}
+
+\nocite{hoppe:2012c}
+\nocite{hoppe:2012b}
+\nocite{hoppe:2012a}
+\nocite{hoppe:2011b}
+\nocite{hoppe:2011a}
+\nocite{hoppe:2010a}
+\nocite{hoppe:2008a}
+
+% ---- remove the default section title 'References'
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+\bibliographystyle{ieeetr}
+{\footnotesize
+    \bibliography{publications}
+}
+
+
+
+%-------------------------------------------------------------------------------
+% DOCUMENT END
+%-------------------------------------------------------------------------------
+
+\end{document}
